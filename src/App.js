@@ -5,11 +5,16 @@ import Popup from './Popup';
 function App() {
 	const [num, setNum] = useState(0);
 	const [pop, setPop] = useState(false);
-	const brand = 'maruthi';
-	const logo = 'toyota';
-	const kids = 'localkids';
-	const java = 'scripts';
-	const kello = 'abcd';
+	const car = { brand: 'maruthi', model: 'toyota', year: '2021' };
+	const logo = { a: 'ab', b: 'bc', c: 'cd' };
+	const kids = { name: 'ravi', age: '35y', location: 'blr' };
+	const java = { x: 'a', y: 'b', z: 'c' };
+	const kello = {
+		ab: 'king',
+		bc: 'kings',
+		cd: 'kingss',
+		p: 'this is a book from jsgdjsg sdfdfds fdsfdsf sfhjfhsdjf sfgsfsdf sdfdsfsdf sdgdgdg',
+	};
 	const arr = [
 		{
 			id: 'image01',
@@ -45,24 +50,50 @@ function App() {
 			course: 'mca',
 		},
 	];
+	const book = [
+		{
+			title: 'sbm',
+			author: 'gk',
+		},
+		{
+			title: 'cbk',
+			author: 'sk',
+		},
+	];
 
 	return (
 		<div>
-			{pop === false ? (
-				<Com
-					brand={brand}
-					logo={logo}
-					kids={kids}
-					java={java}
-					kello={kello}
-					arr={arr}
-					student={student}
-					setNum={setNum}
-					setPop={setPop}
-				/>
-			) : (
-				<Popup arr={arr} num={num} setPop={setPop} />
-			)}
+			<React.Fragment>
+				{pop === false ? (
+					<Com
+						car={car}
+						logo={logo}
+						kids={kids}
+						java={java}
+						kello={kello}
+						arr={arr}
+						setNum={setNum}
+						setPop={setPop}
+						student={student}
+						book={book}
+					>
+						<h3>
+							Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Cupiditate aliquid architecto animi! Eos nulla voluptatem esse
+							doloremque possimus sit repellendus aspernatur? Consectetur
+							corporis architecto dolores. Earum minima quaerat nemo quisquam.
+						</h3>
+						<h1>
+							Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+							Voluptatem sed possimus, qui sit repellendus ab tempore libero
+							placeat, pariatur atque, architecto aliquid incidunt quasi illum
+							modi ipsum! Quidem, iste aut!
+						</h1>
+					</Com>
+				) : (
+					<Popup arr={arr} num={num} setPop={setPop}></Popup>
+				)}
+			</React.Fragment>
 		</div>
 	);
 }
