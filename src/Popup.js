@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Popup = ({ arr, num, setPop, children }) => {
+const Popup = ({ arr, num, setPop, children   }) => {
 	const close = () => {
 		setPop(false);
 	};

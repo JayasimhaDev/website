@@ -6,16 +6,6 @@ const Com = (props) => {
 	const { name, age, location } = props.kids;
 	const { x, y, z } = props.java;
 	const { ab, bc, cd, p } = props.kello;
-	const book = [
-		{
-			title: 'sbm',
-			author: 'gk',
-		},
-		{
-			title: 'cbk',
-			author: 'sk',
-		},
-	];
 
 	const numchange = (e) => {
 		props.setNum(+e.target.id);
@@ -45,14 +35,14 @@ const Com = (props) => {
 				{cd}
 				{p}
 			</h1>
-			<p>
-				{book[0].title[0]}
-				{book[0].author[0]}
-			</p>
+			<div></div>
 			<p>{props.children}</p>
 			<div></div>
 			<div>
 				{props.arr.map((v, i) => {
+					const clickhack = () => {
+						alert('hello jaya');
+					};
 					return (
 						<div key={i}>
 							<p> {v.title} </p>
@@ -65,17 +55,26 @@ const Com = (props) => {
 									numchange(e);
 								}}
 							/>
+							<button type="butoon" onClick={clickhack}>
+								click me
+							</button>
 						</div>
 					);
 				})}
 			</div>
 			<div>
 				{props.student.map((v, idx) => {
+					const clickHandler = () => {
+						alert('hello');
+					};
 					return (
 						<div key={idx}>
 							<p>{v.name}</p>
 							<p>{v.age}</p>
 							<p>{v.course}</p>
+							<button type="butoon" onClick={clickHandler}>
+								clickme
+							</button>
 						</div>
 					);
 				})}

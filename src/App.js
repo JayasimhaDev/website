@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import Com from './Com';
 import Popup from './Popup';
+import Book from './Book';
+import From from './From';
 
 function App() {
+	// const text = 'microdeggre';
 	const [num, setNum] = useState(0);
 	const [pop, setPop] = useState(false);
 	const car = { brand: 'maruthi', model: 'toyota', year: '2021' };
@@ -60,7 +63,23 @@ function App() {
 			author: 'sk',
 		},
 	];
-
+	const form = [
+		{
+			name: 'hhk',
+			title: 'some1',
+			logo: 'gkm',
+		},
+		{
+			name: 'hhk',
+			title: 'some1',
+			logo: 'gkm',
+		},
+		{
+			name: 'hhk',
+			title: 'some1',
+			logo: 'gkm',
+		},
+	];
 	return (
 		<div>
 			<React.Fragment>
@@ -75,7 +94,6 @@ function App() {
 						setNum={setNum}
 						setPop={setPop}
 						student={student}
-						book={book}
 					>
 						<h3>
 							Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -93,6 +111,8 @@ function App() {
 				) : (
 					<Popup arr={arr} num={num} setPop={setPop}></Popup>
 				)}
+				<Book book={book} />
+				<From form={form} />
 			</React.Fragment>
 		</div>
 	);
